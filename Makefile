@@ -37,7 +37,12 @@ $(SRC)/%: $(SRC)/%.m4 $(MACROS)
 # unix 'install' tool here because it creates any needed
 # paths automatically.
 $(DST)/%: $(SRC)/%
-	install -m 644 -D $< $@
+	if [ "`uname -s`" = "Darwin" ]; then \
+		mkdir -p $(DST); \
+		install -m 644 $< $@; \
+	else \
+		install -m 644 -D $< $@; \
+	fi
 
 # By default, GNU Make will skip any source files that have
 # not been modified since the last time they were rendered.
