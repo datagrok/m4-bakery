@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Michael F. Lamb" />
+  <title>Modules</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="/makebakery/_/css/bootstrap-3.4.1.min.css" />
+  <link rel="stylesheet" href="/makebakery/_/css/bootstrap-theme-3.4.1.min.css" />
+  <link rel="stylesheet" href="/makebakery/_/css/style.css" />
+  <link rel="icon" href="/makebakery/favicon.ico">
+  <link rel="icon" type="image/png" href="/makebakery/image.png">
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+
+    <a href="https://github.com/datagrok/makebakery"><img style="position: absolute; top: 0; right: 0; border: 0;" src="/makebakery/_/img/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+
+    <div class="navbar-header">
+      <button type="button" class="btn btn-default navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="glyphicon glyphicon-folder-open"></span>
+      </button>
+      <a class="navbar-brand" href="/makebakery/">makebakery</a>
+    </div>
+
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav"></ul>
+    </div>
+
+  </div>
+</nav>
+
+<!-- Let's not demo the breadcrumb navigation until it works automatically.
+<div class="container">
+  <ol class="breadcrumb">
+    <li><a href="#"></a></li>
+    <li><a href="#">Library</a></li>
+    <li class="active">Data</li>
+  </ol>
+</div>
+-->
+
+<div class="container">
+
+<header id="title-block-header">
+<h1 class="title">Modules</h1>
+<p class="author">Michael F. Lamb</p>
+<p class="date">Mon 26 Apr 2021 06:49:31 PM PDT</p>
+</header>
+<h2 id="using-modules">Using modules</h2>
+<p>To enable a module, add its name to the <code>MODULES</code> variable in your Makefile and define any configuration variables it needs.</p>
+<h2 id="modules-included-with-makebakery">Modules included with Makebakery</h2>
+<p>Some modules are prefixed with underscores; this is to ensure they are invoked before others when necessary.</p>
+<h3 id="source-locations">Source Locations</h3>
+<ul>
+<li><p><strong>__source</strong>: Basic filesystem-based sources. Most sites will use this.</p></li>
+<li><p><strong>__multisource</strong>: Merge multiple sources. I use this to keep site design and content in separate git repositories.</p></li>
+</ul>
+<h3 id="source-formats">Source Formats</h3>
+<ul>
+<li><p><strong>coffeescript</strong>: Render <a href="https://coffeescript.org/">CoffeeScript</a> to JavaScript.</p></li>
+<li><p><strong>discount_theme</strong>: Render Markdown to HTML using the <code>theme</code> program included with the <a href="http://www.pell.portland.or.us/~orc/Code/discount/">discount</a> markdown renderer.</p></li>
+<li><p><strong>executable</strong>: Execute programs or scripts and capture their output. This is a very useful module enabling lots of other features like this site’s site map, automatic navigation generation, templating for the header and footer, and more.</p></li>
+<li><p><strong>pandoc</strong>: Render Markdown to HTML using <a href="https://pandoc.org/">pandoc</a>, the best markdown processor in the universe.</p></li>
+<li><p><strong>___raw</strong>: Pass source files through to output with no rendering nor wrapping.</p></li>
+<li><p><strong>sass</strong>: Renders .sass and .scss to .css with <code>sassc</code>.</p></li>
+<li><p><strong>url</strong>: Downloads a file at a given URL. I use this to serve local copies of resources like jQuery, bootstrap, and Google Fonts.</p></li>
+</ul>
+<h3 id="site-structure">Site structure</h3>
+<ul>
+<li><p><strong>___ignore</strong>: Omit any files listed in the <code>IGNORE</code> variable from the output Useful if your Makefile lives in the same directory as your source files.</p></li>
+<li><p><strong>_index</strong>: Indicate an source file should be processed after everything else. Useful for building indices, sitemaps, atom feeds, etc.</p></li>
+<li><p><strong>_m4</strong>: Use <a href="http://www.gnu.org/software/m4/">GNU m4</a> as a template system.</p></li>
+<li><p><strong>mk</strong>: “Makefile fragment include”; allow sources to define their own makefile rules for building.</p></li>
+<li><p><strong>__paths_are_dirs</strong>: Avoids filename extensions in page URLs by transforming all pages into directories. <code>/foo.md</code> becomes <code>/foo/</code> not <code>/foo.html</code>.</p></li>
+<li><p><strong>gh-pages</strong>: (Unfinished) Publish to Github Pages. Commits built site to a <code>gh-pages</code> branch of the current repository. I use this to publish this site but I haven’t made it robust enough for general-purpose use, yet. TODO</p></li>
+</ul>
+<h3 id="not-recommended">Not Recommended</h3>
+<p>These modules are either deprecated or experimental and not quite ready for use.</p>
+<ul>
+<li><p><strong>rfc2822ish</strong>: (Unfinished) Render files formatted like e-mails to Markdown. Then, another module like <code>pandoc</code> may render that to HTML. I haven’t figured out a good way to handle MIME text/multipart messages. Also, I haven’t used this in a while.</p></li>
+<li><p><strong>extensionless_html</strong>: (Deprecated) Avoid filename extensions in URLs by naively removing them from the output filenames. Several caveats.</p></li>
+</ul>
+<h3 id="to-do">To do</h3>
+<p>These would be useful, but I haven’t built them yet.</p>
+<ul>
+<li>templating and logic using PHP (processed at compile time)</li>
+<li>templating using <a href="https://palletsprojects.com/p/jinja/">Jinja</a></li>
+<li>photo resizing and thumbnails using <a href="https://imagemagick.org">imagemagick</a></li>
+<li>image optimization using <a href="https://pngquant.org/">pngquant</a>, <a href="https://github.com/scour-project/scour">scour</a>, etc.</li>
+<li>client-side / offline search using <a href="https://lunrjs.com/">lunr</a></li>
+<li>source specific resources from inside zip and tarball archives</li>
+<li>deployment via rsync</li>
+<li>deployment including push to remote via gh-pages</li>
+<li>launch a docker container to run any tools that you might not have installed</li>
+</ul>
+<h2 id="module-implementation">Module implementation</h2>
+<p>You might like to create your own module to customize the pipeline, or add a code compiler or rendering tool.</p>
+<p>TODO</p>
+
+</div> <!-- /container -->
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/makebakery/_/js/jquery-3.6.0.min.js"></script>
+<script src="/makebakery/_/js/bootstrap-3.4.1.min.js"></script>
+
+<!--  Get some other variables useful to javascript into the page context. -->
+<script type="text/javascript">
+  var site_root = "/makebakery/";
+</script>
+
+<!--  this is where we put our custom functions -->
+<script src="/makebakery/_/js/functions.js"></script>
+
+</body>
+</html>

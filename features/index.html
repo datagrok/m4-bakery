@@ -6,14 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Michael F. Lamb" />
   <title>Features</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
   </style>
-  <link rel="stylesheet" href="/makebakery/_/css/bootstrap-3.2.0.min.css" />
-  <link rel="stylesheet" href="/makebakery/_/css/bootstrap-theme-3.2.0.min.css" />
+  <link rel="stylesheet" href="/makebakery/_/css/bootstrap-3.4.1.min.css" />
+  <link rel="stylesheet" href="/makebakery/_/css/bootstrap-theme-3.4.1.min.css" />
   <link rel="stylesheet" href="/makebakery/_/css/style.css" />
 </head>
 <body>
@@ -48,34 +50,43 @@
 -->
 
 <div class="container">
-<header>
+
+<header id="title-block-header">
 <h1 class="title">Features</h1>
 <p class="author">Michael F. Lamb</p>
 <p class="date">Thu, 28 Feb 2013 18:27:11 -0500</p>
 </header>
+<h2 id="page-hierarchies">Page hierarchies</h2>
+<p>Makebakery can render a hierarchy of source files to a hierarchy of output files. The following pages are contained within <a href="https://github.com/datagrok/makebakery/tree/master/examples/makebakery-site/examples">the <code>features/</code> directory</a> in the source.</p>
+<nav id="interior">
+</nav>
+<h3 id="automatic-sub-page-links">Automatic sub-page links</h3>
+<p>The links above are automatically generated, using <a href="https://github.com/datagrok/makebakery/blob/master/examples/makebakery-site/_/js/functions.js#L74">a Javascript function</a> that reads a site map in JSON format. The source for that JSON file is actually a <a href="https://github.com/datagrok/makebakery/blob/master/examples/makebakery-site/pages.json.run">small shell script</a> that outputs JSON. With the <code>executable</code> module enabled, makebakery renders scripts by executing them and capturing their output.</p>
+<p>This site map script and link generation Javascript is not considered a “core” feature of makebakery. But they are included as Free Software, so if you like them and their license, feel free to begin your static site by modifying a copy of this site.</p>
+<h2 id="design-goals">Design Goals</h2>
 <p>From my static site generator, I wanted:</p>
 <ul>
-<li>to use [Pandoc][] or sometimes [discount][] to author HTML pages on my website(s) using [Markdown][]</li>
-<li>to build pages in parallel, taking advantage of all my processor cores</li>
-<li>to have a multi-step pipeline, so that I might have a shell script output Markdown syntax, which would then be processed into HTML by Pandoc.</li>
-<li>to organize my pages into a hierarchy if I prefer, not just a flat collection or serialized “blog”</li>
-<li>a website navigation mechanism visible on every page that will automatically update itself whenever I make changes to pages
+<li>✅ to use <a href="http://johnmacfarlane.net/pandoc/">Pandoc</a> or sometimes <a href="https://www.pell.portland.or.us/~orc/Code/discount/">discount</a> to author pages using Markdown syntax</li>
+<li>✅ to build pages in parallel, taking advantage of all my processor cores</li>
+<li>✅ to have a multi-step pipeline, so that I might have a shell or python script in my source files that retrieves data from a database and outputs Markdown syntax, which would then be processed into HTML by Pandoc, and wrapped in the common site template</li>
+<li>✅ to be language-agnostic; to use any language or mix of languages in little scripts that could be used to generate pages</li>
+<li>✅ to organize my pages into a hierarchy if I prefer, not just a flat collection or serialized “blog”</li>
+<li>✅ a website navigation mechanism visible on every page that will automatically update itself whenever I make changes to pages
 <ul>
-<li>that will work both with and without javascript enabled</li>
+<li>✅ that will work both with and without javascript enabled</li>
 </ul></li>
-<li>all my pages to automatically share a common design</li>
-<li>to have the option of occasionally authoring pages <em>not</em> in Markdown, but instead raw HTML or generated from a script
+<li>✅ for all of my pages to automatically share a common design, unless explicitly disabled</li>
+<li>✅ to have the option of occasionally authoring pages <em>not</em> in Markdown, but instead raw HTML or generated from a script
 <ul>
-<li>but still automatically share the common page design</li>
+<li>✅ but still automatically share the common page design</li>
 </ul></li>
-<li>to author interactive features with [coffeescript][] and have it automatically convert to JavaScript</li>
-<li>to serve fonts and javascript libraries from my website, without manually “vendoring” a copy into my git repository</li>
-<li>an efficient build mechanism that would update only the pages whose source files have changed</li>
-<li>URLs which do not reveal filename extensions</li>
-<li>to deploy on Apache that I do not control, on an nginx that I do control, on an S3 bucket configured for website hosting, or to GitHub Pages.</li>
-<li>when I’m feeling masochistic, to use [GNU M4][] to do templating like I did back in ’99</li>
-<li><p>to be language-agnostic; to use any language or mix of languages in little scripts that could be used to generate pages</p></li>
-<li><p>Pages are compiled in a pipeline according to their filename extension. You may freely mix markdown, raw html, compile-time executables, and other files within your sources. Also, you may chain them together, so that for example a Python script might retrieve information from a database and render markdown, which is then rendered into html.</p></li>
+<li>✅ to author interactive features with <a href="https://coffeescript.org/">coffeescript</a> and have it automatically convert to JavaScript</li>
+<li>✅ to serve fonts and javascript libraries from my website, without manually “vendoring” a copy into my git repository</li>
+<li>✅ an efficient build mechanism that would update only the pages whose source files have changed</li>
+<li>✅ URLs which do not reveal filename extensions</li>
+<li>✅ to deploy on Apache that I do not control, on an nginx that I do control, on an S3 bucket configured for website hosting, or to GitHub Pages.</li>
+<li>✅ when I’m feeling masochistic, to use <a href="https://www.gnu.org/software/m4/">GNU M4</a> to do templating like I did back in ’99</li>
+<li>✅ to be able to add support for a new type of source format without a huge refactoring</li>
 </ul>
 
 </div> <!-- /container -->
@@ -83,8 +94,8 @@
 <!-- Le javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="/makebakery/_/js/jquery-2.1.1.min.js"></script>
-<script src="/makebakery/_/js/bootstrap-3.2.0.min.js"></script>
+<script src="/makebakery/_/js/jquery-3.6.0.min.js"></script>
+<script src="/makebakery/_/js/bootstrap-3.4.1.min.js"></script>
 
 <!--  Get some other variables useful to javascript into the page context. -->
 <script type="text/javascript">
@@ -93,5 +104,6 @@
 
 <!--  this is where we put our custom functions -->
 <script src="/makebakery/_/js/functions.js"></script>
+
 </body>
 </html>

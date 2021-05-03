@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# pages.json.run: generate a JSON-format index of pages in this website
+#
+# Copyright 2018 Michael F. Lamb <http://datagrok.org>
+#
+# This program is part of Makebakery.
+# License: AGPLv3+ http://www.gnu.org/licenses/agpl.html
+# See COPYING for details.
+#
+
+echo '['
+
+find -name "index.html" | while read filename; do
+	title="$( sed -n 's/^\s*<title>\([^<]*\)<\/title>/\1/p' "$filename" )"
+	short_title="$( sed -n 's/^\s*<meta name=\"short title\" content=\"\([^\"]*\)\">/"\1"/p' "$filename" )"
+	ctime="$( sed -n 's/^\s*var created = new Date(\([^)]*\));/\1/p' "$filename" )"
+	mtime="$( date -u -r "$filename" "+%s000" )"
+	cat <<- EOF
+	{
+	    "path": "${filename#.}",
+	    "created": ${ctime:-null},
+	    "modified": ${mtime},
+	    "short_title": ${short_title:-null},
+	    "title": "${title}"
+	},
+	EOF
+done
+
+# trailing empty object to avoid having to deal with no trailing comma
+# in last element of an array in javascript
+echo '{}'
+echo ']'

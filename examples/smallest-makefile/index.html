@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Michael F. Lamb" />
-  <title>🍞 Makebakery</title>
+  <title>makebakery without a Makefile</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -114,43 +114,45 @@
 <div class="container">
 
 <header id="title-block-header">
-<h1 class="title">🍞 Makebakery</h1>
+<h1 class="title">makebakery without a Makefile</h1>
 <p class="author">Michael F. Lamb</p>
-<p class="date">Thu, 28 Feb 2013 18:27:11 -0500</p>
+<p class="date">Wed, 21 Apr 2021 19:59:58 -0700</p>
 </header>
-<p><strong>Makebakery</strong> is a static website generator implemented using <a href="https://www.gnu.org/software/make/">GNU Make</a>.</p>
-<figure>
-<img src="bakery.jpg" class="pull-right" alt="" /><figcaption>Photo: <a href="https://www.flickr.com/photos/barthelomaus/104318646/">Boris Bartels, “Bakery” (2006)</a> (<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA 2.0</a>). Resized.</figcaption>
-</figure>
-<p><strong><em>Static</em> websites</strong> are those which require no special logic on the server-side to work, as opposed to <strong><em>dynamic</em> websites</strong> which trigger some server-side processing for most page requests. <a href="documentation/about_static_sites/">More about static sites…</a></p>
-<p><strong><em>Make</em></strong> is a venerable old UNIX build tool intended for the compilation of software source code into executable code, but Makebakery puts it to use compiling websites. <strong>GNU Make</strong> is one popular variant of <em>Make</em> with several enhancements, included with most Linux distributions. <a href="documentation/about_make/">More about <em>Make</em>…</a></p>
-<p>More accurately, Makebakery is a <em>collection of rules and recipes</em> for GNU Make that are useful for orchestrating various tools to build various styles of static website.</p>
-<p>Makebakery distinguishes itself from <a href="documentation/alternatives">other Make-based approaches</a> by organizing these rules and recipes into <em>modules</em> which may be toggled to suit your preference.</p>
-<h3 id="motivation">Motivation</h3>
-<p>The basic idea of using <em>Make</em> to orchestrate building static HTML files from source files is fairly well-known. I encountered it in 1998 from <a href="http://web.archive.org/web/19980529230944/http://www.linuxgazette.com/issue22/using_m4.html">Using M4 to write HTML</a> and I’ve been building sites this way ever since.</p>
-<p>Unfortunately, I found myself re-implementing similar-but-different Makefiles over and over again for each different static site I wanted to build. Makebakery is the result of refactoring my various Makefiles into modular parts, and finding a mechanism to toggle those parts on or off for any site that uses the collection.</p>
-<h3 id="example">Example</h3>
-<p>A short Makefile is enough to get started:</p>
+<p>For most uses, you’re expected to create a <code>Makefile</code> that sets some variables and then <code>include makebakery.mk</code>. Recall the minimal example’s Makefile:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode makefile"><code class="sourceCode makefile"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="dt">SRC      </span><span class="ch">=</span><span class="st"> .</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="dt">DST      </span><span class="ch">=</span><span class="st"> /tmp/build/example</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="dt">MODULES  </span><span class="ch">=</span><span class="st"> ___ignore __source pandoc</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="dt">IGNORE   </span><span class="ch">=</span><span class="st"> README.html Makefile</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="kw">include</span> /path/to/makebakery.mk</span></code></pre></div>
-<p>When you run <code>make</code>, this will copy source files from the current directory to the destination directory, and use <a href="http://johnmacfarlane.net/pandoc/">Pandoc</a> to convert Markdown to HTML in the process:</p>
-<pre><code>.                        /tmp/build/example
-├── about.md      -&gt;     ├── about.html
-├── contact.md           ├── contact.html
-├── index.md             ├── index.html
-├── logo.png             ├── logo.png
-├── projects.md          └── projects.html
-├── Makefile
-└── README.md</code></pre>
-<p>This is included as <a href="https://github.com/datagrok/makebakery/tree/master/examples/minimal">the “minimal” example</a> in makebakery’s source code repository.</p>
-<p>You might then add to the compilation pipeline a template engine like <a href="http://jinja.pocoo.org/">Jinja</a>, a CSS compiler like <a href="https://sass-lang.com/">Sass</a>, image processing using <a href="http://www.imagemagick.org">ImageMagick</a>, and any other custom scripts you please.</p>
-<p>To enable a module, add its name to the <code>MODULES</code> variable and define any configuration variables it needs.</p>
-<p>For a slightly more advanced example, examine the <a href="https://github.com/datagrok/makebakery/blob/master/examples/makebakery-site/Makefile">Makefile</a> and associated <a href="https://github.com/datagrok/makebakery/tree/master/examples/makebakery-site">source files used to build this site</a> (that you are reading).</p>
-<hr />
-<p>Created by <a href="https://datagrok.org">Michael F. Lamb</a>. License: <a href="https://www.gnu.org/licenses/agpl-3.0.html">GNU Affero GPL version 3 or later</a>, with additional permissions for output. See <a href="https://github.com/datagrok/makebakery/blob/master/COPYING.md">COPYING</a> for more information.</p>
+<p>But, it might be instructive to learn that you don’t technically need your own Makefile at all. You can specify variables as options on the command line when invoking <code>make</code>. So by specifying <code>makebakery.mk</code> itself as the makefile, as long as you also specify all the options it needs, it will work the same.</p>
+<h2 id="minimal-makebakery">Minimal makebakery</h2>
+<p>If we start with</p>
+<pre><code>.
+└── input
+    └── index.html</code></pre>
+<p>and run</p>
+<pre><code>make -f /path/to/makebakery/makebakery.mk SRC=input DST=output MODULES=__source</code></pre>
+<p>this is the result:</p>
+<pre><code>.
+├── input
+│   └── index.html
+└── output
+    └── index.html</code></pre>
+<p><code>__source</code> is the only module we’ve enabled here. It describes how to use a hierarchy of files on the filesystem as sources.</p>
+<h2 id="plus-one-module">Plus one module</h2>
+<p>Of course, the previous example hasn’t done much. There’s easier ways to make a verbatim copy of a tree of files! So, let’s do the same but enable the <code>pandoc</code> module for markdown processing.</p>
+<p>Starting with</p>
+<pre><code>.
+└── input
+    └── index.md</code></pre>
+<p>and run</p>
+<pre><code>make -f /path/to/makebakery/makebakery.mk SRC=input DST=output MODULES=&quot;__source pandoc&quot;</code></pre>
+<p>this is the result:</p>
+<pre><code>.
+├── input
+│   └── index.md
+└── output
+    └── index.html</code></pre>
 
 </div> <!-- /container -->
 

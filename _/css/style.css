@@ -29,3 +29,10 @@ figcaption {
 blockquote {
     font-size: inherit;
 }
+a {
+    text-decoration: underline;
+}
+nav a {
+    text-decoration: none;
+
+}

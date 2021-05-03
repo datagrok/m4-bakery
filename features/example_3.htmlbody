@@ -5,10 +5,8 @@
     </ul>
     <p>The source for this page is a chunk of HTML which gets wrapped by a common page template before rendering, using the M4 Macro processor.</p>
     <dl>
-        <!-- TODO FIXME don't boast about these features until we can demonstrate how to enable them
         <dt>If the source file contains only the body content, how is metadata like the page title conveyed to the templating system? And where is it stored?</dt>
-        <dd>This is a feature of <i>makebakery</i>: you may decide all of these things. For this example, I have used a short one-off script that reads the title from the first line of <tt>.htmlchunk</tt> files and renders it in a format that <tt>m4</tt> will use. You might instead store metadata seperately from source files in special metadata files. Or you might store metadata and content together in <tt>.json</tt>, <tt>yaml</tt>, <tt>RFC2822</tt>, or any other format.</dd>
+        <dd>This is a feature of <i>makebakery</i>: you may decide all of these things. For this example, I have used a simple one-off script that reads the title from the first line of <tt>.htmlchunk</tt> files and renders it in a format that <tt>m4</tt> will use. You might instead store metadata seperately from source files in special metadata files. Or you might store metadata and content together in <tt>.json</tt>, <tt>yaml</tt>, <tt>RFC2822</tt>, or any other format.</dd>
         <dd>What if I don't like M4?</dt>
         <dd>M4 is one of many different options for templating</dd>
-        -->
     </dl>

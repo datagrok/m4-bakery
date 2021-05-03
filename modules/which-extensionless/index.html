@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Michael F. Lamb" />
+  <title>Why should I use paths_are_dirs?</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="/makebakery/_/css/bootstrap-3.4.1.min.css" />
+  <link rel="stylesheet" href="/makebakery/_/css/bootstrap-theme-3.4.1.min.css" />
+  <link rel="stylesheet" href="/makebakery/_/css/style.css" />
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+
+    <a href="https://github.com/datagrok/makebakery"><img style="position: absolute; top: 0; right: 0; border: 0;" src="/makebakery/_/img/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+
+    <div class="navbar-header">
+      <button type="button" class="btn btn-default navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="glyphicon glyphicon-folder-open"></span>
+      </button>
+      <a class="navbar-brand" href="/makebakery/">makebakery</a>
+    </div>
+
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav"></ul>
+    </div>
+
+  </div>
+</nav>
+
+<!-- Let's not demo the breadcrumb navigation until it works automatically.
+<div class="container">
+  <ol class="breadcrumb">
+    <li><a href="#"></a></li>
+    <li><a href="#">Library</a></li>
+    <li class="active">Data</li>
+  </ol>
+</div>
+-->
+
+<div class="container">
+
+<header id="title-block-header">
+<h1 class="title">Why should I use <code>paths_are_dirs</code>?</h1>
+<p class="author">Michael F. Lamb</p>
+<p class="date">Mon 26 Apr 2021 03:46:29 AM PDT</p>
+</header>
+<p><code>paths_are_dirs</code> makes it so you don’t have filename extensions in your page URLs.</p>
+<p>Why should you do this?</p>
+<ul>
+<li><a href="https://www.w3.org/Provider/Style/URI">Cool URIs Don’t Change</a> (1998)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> says you should never change your URLs but the contents might cease to be HTML. (Yeah, I’m not much swayed by that one either, but…)</li>
+<li>It’s easier to manage relative links</li>
+<li>It’s easier to rename pages</li>
+</ul>
+<p>There’s other ways to strip the extension from website resources, but not all of them provide all of the advantages listed above:</p>
+<ul>
+<li>Apache’s <code>mod_rewrite</code></li>
+<li>Apache’s <code>mod_negotiation</code> <code>MultiViews</code></li>
+<li>deprecated makebakery module <code>extensionless_html</code></li>
+</ul>
+<p>I think using <code>paths_are_dirs</code> is better than any of those (or not doing it at all). Its only downside is a more complex filesystem structure of output files. It depends on functionality like Apache <code>mod_dir</code>’s <code>DirectoryIndex</code> but pretty much all webservers support that.</p>
+<p><code>paths_are_dirs</code> converts all pages like <code>.../page.html</code> into <code>.../page/index.html</code>.</p>
+<p>Consider this site structure:</p>
+<ul>
+<li>root
+<ul>
+<li>parent
+<ul>
+<li>page</li>
+<li>sibling
+<ul>
+<li>nibling</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 20%" />
+<col style="width: 17%" />
+<col style="width: 16%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: left;">No extension removal</th>
+<th style="text-align: left;"><code>extensionless_html</code></th>
+<th style="text-align: left;">Apache <code>multiviews</code></th>
+<th style="text-align: left;"><code>paths_are_dirs</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Root filename:</td>
+<td style="text-align: left;"><code>/index.html</code></td>
+<td style="text-align: left;"><code>/index</code></td>
+<td style="text-align: left;"><code>/index.html</code></td>
+<td style="text-align: left;"><code>/index.html</code></td>
+</tr>
+<tr class="even">
+<td>Page filename:</td>
+<td style="text-align: left;"><code>/parent/page.html</code></td>
+<td style="text-align: left;"><code>/parent/page</code></td>
+<td style="text-align: left;"><code>/parent/page.html</code></td>
+<td style="text-align: left;"><code>/parent/page/index.html</code></td>
+</tr>
+<tr class="odd">
+<td>Absolute URL to page:</td>
+<td style="text-align: left;"><code>/parent/page.html</code></td>
+<td style="text-align: left;"><code>/parent/page</code></td>
+<td style="text-align: left;"><code>/parent/page</code></td>
+<td style="text-align: left;"><code>/parent/page/</code></td>
+</tr>
+<tr class="even">
+<td>Relative URL to parent:</td>
+<td style="text-align: left;"><code>../parent.html</code></td>
+<td style="text-align: left;"><code>../parent</code></td>
+<td style="text-align: left;"><code>../parent</code></td>
+<td style="text-align: left;"><code>../</code></td>
+</tr>
+<tr class="odd">
+<td>Relative URL to itself:</td>
+<td style="text-align: left;"><code>./page.html</code></td>
+<td style="text-align: left;"><code>./page</code></td>
+<td style="text-align: left;"><code>./page</code></td>
+<td style="text-align: left;"><code>./</code></td>
+</tr>
+<tr class="even">
+<td>Relative URL to child:</td>
+<td style="text-align: left;"><code>./page/child.html</code></td>
+<td style="text-align: left;">conflict</td>
+<td style="text-align: left;"><code>./page/child</code></td>
+<td style="text-align: left;"><code>./child/</code></td>
+</tr>
+<tr class="odd">
+<td>Relative URL to sibling:</td>
+<td style="text-align: left;"><code>../sibling.html</code></td>
+<td style="text-align: left;"><code>./sibling</code></td>
+<td style="text-align: left;"><code>./sibling</code></td>
+<td style="text-align: left;"><code>../sibling/</code></td>
+</tr>
+<tr class="even">
+<td>Relative URL to nibling:</td>
+<td style="text-align: left;"><code>./sibling/nibling.html</code></td>
+<td style="text-align: left;">conflict</td>
+<td style="text-align: left;"><code>./sibling/nibling</code></td>
+<td style="text-align: left;"><code>../sibling/nibling/</code></td>
+</tr>
+</tbody>
+</table>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>Tim Berners-Lee. <em>Style Guide for online hypertext</em>: <a href="https://www.w3.org/Provider/Style/URI">Cool URIs Don’t Change</a> (1998).<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</div> <!-- /container -->
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/makebakery/_/js/jquery-3.6.0.min.js"></script>
+<script src="/makebakery/_/js/bootstrap-3.4.1.min.js"></script>
+
+<!--  Get some other variables useful to javascript into the page context. -->
+<script type="text/javascript">
+  var site_root = "/makebakery/";
+</script>
+
+<!--  this is where we put our custom functions -->
+<script src="/makebakery/_/js/functions.js"></script>
+
+</body>
+</html>

@@ -106,9 +106,7 @@ function build_child_links(data) {
     }).join("");
     nav = $("<ul>" + nav + "</ul>");
     $(document).ready(function(){
-        var target = $('h2:contains(Child pages)');
-        if (!target.length) return;
-        target.after(nav);
+        $('nav#interior').replaceWith(nav);
     });
 }
 

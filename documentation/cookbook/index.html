@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Michael F. Lamb" />
-  <title>🍞 Makebakery</title>
+  <title>Cookbook</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -114,43 +114,69 @@
 <div class="container">
 
 <header id="title-block-header">
-<h1 class="title">🍞 Makebakery</h1>
+<h1 class="title">Cookbook</h1>
 <p class="author">Michael F. Lamb</p>
-<p class="date">Thu, 28 Feb 2013 18:27:11 -0500</p>
+<p class="date">Fri, 23 Apr 2021 15:17:30 -0700</p>
 </header>
-<p><strong>Makebakery</strong> is a static website generator implemented using <a href="https://www.gnu.org/software/make/">GNU Make</a>.</p>
-<figure>
-<img src="bakery.jpg" class="pull-right" alt="" /><figcaption>Photo: <a href="https://www.flickr.com/photos/barthelomaus/104318646/">Boris Bartels, “Bakery” (2006)</a> (<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA 2.0</a>). Resized.</figcaption>
-</figure>
-<p><strong><em>Static</em> websites</strong> are those which require no special logic on the server-side to work, as opposed to <strong><em>dynamic</em> websites</strong> which trigger some server-side processing for most page requests. <a href="documentation/about_static_sites/">More about static sites…</a></p>
-<p><strong><em>Make</em></strong> is a venerable old UNIX build tool intended for the compilation of software source code into executable code, but Makebakery puts it to use compiling websites. <strong>GNU Make</strong> is one popular variant of <em>Make</em> with several enhancements, included with most Linux distributions. <a href="documentation/about_make/">More about <em>Make</em>…</a></p>
-<p>More accurately, Makebakery is a <em>collection of rules and recipes</em> for GNU Make that are useful for orchestrating various tools to build various styles of static website.</p>
-<p>Makebakery distinguishes itself from <a href="documentation/alternatives">other Make-based approaches</a> by organizing these rules and recipes into <em>modules</em> which may be toggled to suit your preference.</p>
-<h3 id="motivation">Motivation</h3>
-<p>The basic idea of using <em>Make</em> to orchestrate building static HTML files from source files is fairly well-known. I encountered it in 1998 from <a href="http://web.archive.org/web/19980529230944/http://www.linuxgazette.com/issue22/using_m4.html">Using M4 to write HTML</a> and I’ve been building sites this way ever since.</p>
-<p>Unfortunately, I found myself re-implementing similar-but-different Makefiles over and over again for each different static site I wanted to build. Makebakery is the result of refactoring my various Makefiles into modular parts, and finding a mechanism to toggle those parts on or off for any site that uses the collection.</p>
-<h3 id="example">Example</h3>
-<p>A short Makefile is enough to get started:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode makefile"><code class="sourceCode makefile"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="dt">SRC      </span><span class="ch">=</span><span class="st"> .</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="dt">DST      </span><span class="ch">=</span><span class="st"> /tmp/build/example</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="dt">MODULES  </span><span class="ch">=</span><span class="st"> ___ignore __source pandoc</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="dt">IGNORE   </span><span class="ch">=</span><span class="st"> README.html Makefile</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="kw">include</span> /path/to/makebakery.mk</span></code></pre></div>
-<p>When you run <code>make</code>, this will copy source files from the current directory to the destination directory, and use <a href="http://johnmacfarlane.net/pandoc/">Pandoc</a> to convert Markdown to HTML in the process:</p>
-<pre><code>.                        /tmp/build/example
-├── about.md      -&gt;     ├── about.html
-├── contact.md           ├── contact.html
-├── index.md             ├── index.html
-├── logo.png             ├── logo.png
-├── projects.md          └── projects.html
-├── Makefile
-└── README.md</code></pre>
-<p>This is included as <a href="https://github.com/datagrok/makebakery/tree/master/examples/minimal">the “minimal” example</a> in makebakery’s source code repository.</p>
-<p>You might then add to the compilation pipeline a template engine like <a href="http://jinja.pocoo.org/">Jinja</a>, a CSS compiler like <a href="https://sass-lang.com/">Sass</a>, image processing using <a href="http://www.imagemagick.org">ImageMagick</a>, and any other custom scripts you please.</p>
-<p>To enable a module, add its name to the <code>MODULES</code> variable and define any configuration variables it needs.</p>
-<p>For a slightly more advanced example, examine the <a href="https://github.com/datagrok/makebakery/blob/master/examples/makebakery-site/Makefile">Makefile</a> and associated <a href="https://github.com/datagrok/makebakery/tree/master/examples/makebakery-site">source files used to build this site</a> (that you are reading).</p>
-<hr />
-<p>Created by <a href="https://datagrok.org">Michael F. Lamb</a>. License: <a href="https://www.gnu.org/licenses/agpl-3.0.html">GNU Affero GPL version 3 or later</a>, with additional permissions for output. See <a href="https://github.com/datagrok/makebakery/blob/master/COPYING.md">COPYING</a> for more information.</p>
+<h2 id="how-do-i">How do I…?</h2>
+<h3 id="make-make-go-faster">Make <code>make</code> go faster</h3>
+<pre><code>make -r -j</code></pre>
+<p><code>-r</code> (or <code>--no-builtin-rules</code>) turns off several built-in compilation rules that GNU Make includes by default that are useful for compiling software. Turning them off makes it so it doesn’t have to try as hard to figure out the steps to transform your source files into your rendered files.</p>
+<p><code>-j</code> (or <code>--jobs</code>) causes make to run its compilation steps in parallel whenever it is safe to do so.</p>
+<h3 id="preview-my-changes">Preview my changes</h3>
+<pre><code>python3 -m http.server</code></pre>
+<p>I like to start a little local webserver to preview my changes before deploying to the public internet.</p>
+<p>There’s many ways to do this. Each of these commands will start a webserver that serves its current directory at http://localhost:8000, if you have the software installed.</p>
+<ul>
+<li>Python 2: <code>python -m SimpleHTTPServer</code> (stop using Python 2.)</li>
+<li>Python 3: <code>python3 -m http.server 8000</code></li>
+<li>Ruby: <code>ruby -run -e httpd . -p 8000</code></li>
+<li>PHP: <code>php -S localhost:8000</code></li>
+<li>busybox: <code>busybox httpd -f -p 8000</code></li>
+</ul>
+<p>TODO: build a module for this, so you can add <code>MODULES= ... webserver</code> and then <code>make serve</code></p>
+<h3 id="automatically-update-the-preview-site-whenever-i-modify-a-file">Automatically update the preview site whenever I modify a file</h3>
+<pre><code>sudo apt install inotify-tools
+inotifywait -rme close_write . | while read dir event filename
+    do
+        [ -e &quot;$dir$filename&quot; ] || continue
+        make -r -j
+    done</code></pre>
+<ul>
+<li>A more robust version might add <code>--exclude</code> arguments to avoid git actions and swap files</li>
+<li>Not working with vim? try <code>:set nowritebackup</code></li>
+</ul>
+<h3 id="automatically-update-the-preview-browser-tab-whenever-the-site-changes">Automatically update the preview browser tab whenever the site changes</h3>
+<pre><code></code></pre>
+<p>TODO.</p>
+<p>I think the simplest way to accomplish this will be to connect up:</p>
+<ul>
+<li>inotify watching the preview site output directory with</li>
+<li>a tiny server serving a long-poll endpoint, and</li>
+<li>a scrap of javascript inserted to every page that long-polls the endpoint.</li>
+</ul>
+<p>When inotify sees a file has been modified, the server emits the path of the modified data to waiting long-poll requests. The JavaScript waiting on the long-poll response calls window.location.reload() when window.location matches the received path.</p>
+<h3 id="automatically-update-the-published-site-whenever-i-git-commit">Automatically update the published site whenever I <code>git commit</code></h3>
+<pre><code></code></pre>
+<h3 id="remove-the-.html-extension-from-my-static-sites-urls">Remove the .html extension from my static site’s URLs</h3>
+<pre><code>...
+MODULES = paths_are_dirs ...
+...</code></pre>
+<p>Use the <code>paths_are_dirs</code> module.</p>
+<h3 id="expand-some-variables-in-a-file">Expand some variables in a file</h3>
+<p>Use a templating plugin like <code>_m4</code>, or do a one-off manual template using <code>executable</code>.</p>
+<h4 id="using-executable-for-templating">Using <code>executable</code> for templating</h4>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="co">#!/bin/sh</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a><span class="fu">cat</span> <span class="op">&lt;&lt;EOF</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a>&lt;html&gt;</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a>&lt;p&gt;This file was generated by <span class="va">$USER</span>.&lt;/p&gt;</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a>&lt;/html&gt;</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a><span class="op">EOF</span></span></code></pre></div>
+<h3 id="make-a-blog">Make a blog</h3>
+<h3 id="make-an-atom-feed">Make an atom feed</h3>
+<h3 id="make-a-site-map">Make a site-map</h3>
+<h3 id="make-a-site-map-that-requires-no-javascript">Make a site-map that requires no JavaScript</h3>
+<h3 id="make-a-navigation-bar-that-automatically-updates-itself">Make a navigation bar that automatically updates itself</h3>
 
 </div> <!-- /container -->
 

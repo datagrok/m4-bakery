@@ -5,14 +5,16 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>About Make</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
   </style>
-  <link rel="stylesheet" href="/makebakery/_/css/bootstrap-3.2.0.min.css" />
-  <link rel="stylesheet" href="/makebakery/_/css/bootstrap-theme-3.2.0.min.css" />
+  <link rel="stylesheet" href="/makebakery/_/css/bootstrap-3.4.1.min.css" />
+  <link rel="stylesheet" href="/makebakery/_/css/bootstrap-theme-3.4.1.min.css" />
   <link rel="stylesheet" href="/makebakery/_/css/style.css" />
 </head>
 <body>
@@ -47,31 +49,32 @@
 -->
 
 <div class="container">
-<header>
+
+<header id="title-block-header">
 <h1 class="title">About <em>Make</em></h1>
 </header>
-<p><em>Make</em> is a build tool that figures out which commands need to be run to transform some given set of source files into a desired set of output files. Modern work-alikes include [Grunt][], [Rake][], or [Ant][]. Despite its age and the number of times it has been re-invented, <em>Make</em> has some surprising features that I think makes it superior to the newcomers:</p>
+<p><em>Make</em> is a build tool that figures out which commands need to be run to transform some given set of source files into a desired set of output files. Modern work-alikes include <a href="gruntjs.com">Grunt</a>, <a href="http://rake.rubyforge.org">Rake</a>, or <a href="http://ant.apache.org">Ant</a>. Despite its age and the number of times it has been re-invented, <em>Make</em> has some surprising features that I think makes it superior to the newcomers:</p>
 <ul>
 <li>When invoked multiple times, it is smart enough to only recompile target files whose source files have changed.</li>
 <li>When used on multi-core systems or with I/O heavy jobs, it is smart enough to figure out how to parallelize its work.</li>
-<li><em>Make</em> can apply multiple compilation steps to each source file to render the desired output, and it cleans up the intermediate files automatically.</li>
+<li>It can apply multiple compilation steps to each source file to render the desired output, and it cleans up the intermediate files automatically.</li>
 </ul>
 <p><em>Make</em> has a rather steep learning curve, but since it is so ubiquitous, it’s likely to be already installed on your computer, and your web host’s servers, and easy to obtain if not.</p>
-<p><em>Make</em> is a POSIX standard, but Makebakery relies on a specific implementation with non-standard features: [GNU Make][]. Why?</p>
-<p>Mostly because that’s what is installed on all my computers, all of which run Debian GNU/Linux. It’s Free Software so it’s not difficult to get running on other platforms. Making a similar system based on POSIX <em>Make</em> or [Plan 9’s Mk][Mk] might be possible, but it’s not a high priority for me.</p>
+<p><em>Make</em> is a POSIX standard, but Makebakery relies on a specific implementation with non-standard features: <a href="https://www.gnu.org/software/make/">GNU Make</a>. Why?</p>
+<p>Mostly because that’s what is installed on all my computers, all of which run Debian GNU/Linux. It’s Free Software so it’s not difficult to get running on other platforms. Creating a similar system based on BSD Make, POSIX <em>Make</em> or <a href="http://doc.cat-v.org/plan_9/4th_edition/papers/mk">Plan 9’s Mk</a> might be possible, but it’s not a high priority for me.</p>
 <blockquote>
 <p>… the POSIX standard version of Make is extraordinarily feature-poor; it lacks many basic functions that people need in practice. As a result, most people create makefiles (the input files to make) that require specific implementations instead of just following the POSIX standard. Typically that specific implementation is GNU make; since GNU make runs on nearly every Unix-like system, and is FLOSS, this is an easy requirement to meet.</p>
-<p>–David Wheeler, [Improving Make (2014)][]</p>
+<p>–David Wheeler, <a href="https://www.dwheeler.com/essays/make.html">Improving Make (2014)</a></p>
 </blockquote>
-<p>More about <em>Make</em> and GNU Make: [Wikipedia: Make (software)][W:Make]</p>
+<p>More about <em>Make</em> and GNU Make: <a href="https://en.wikipedia.org/wiki/Make_%28software%29">Wikipedia: Make (software)</a></p>
 
 </div> <!-- /container -->
 
 <!-- Le javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="/makebakery/_/js/jquery-2.1.1.min.js"></script>
-<script src="/makebakery/_/js/bootstrap-3.2.0.min.js"></script>
+<script src="/makebakery/_/js/jquery-3.6.0.min.js"></script>
+<script src="/makebakery/_/js/bootstrap-3.4.1.min.js"></script>
 
 <!--  Get some other variables useful to javascript into the page context. -->
 <script type="text/javascript">
@@ -80,5 +83,6 @@
 
 <!--  this is where we put our custom functions -->
 <script src="/makebakery/_/js/functions.js"></script>
+
 </body>
 </html>

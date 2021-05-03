@@ -5,14 +5,16 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>About static sites</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
   </style>
-  <link rel="stylesheet" href="/makebakery/_/css/bootstrap-3.2.0.min.css" />
-  <link rel="stylesheet" href="/makebakery/_/css/bootstrap-theme-3.2.0.min.css" />
+  <link rel="stylesheet" href="/makebakery/_/css/bootstrap-3.4.1.min.css" />
+  <link rel="stylesheet" href="/makebakery/_/css/bootstrap-theme-3.4.1.min.css" />
   <link rel="stylesheet" href="/makebakery/_/css/style.css" />
 </head>
 <body>
@@ -47,28 +49,32 @@
 -->
 
 <div class="container">
-<header>
+
+<header id="title-block-header">
 <h1 class="title">About static sites</h1>
 </header>
-<p>Static websites are those whose content is pre-rendered and require only simple software to serve to visitors.</p>
-<p>Static websites are useful because they’re effortlessly fast, scalable, and cache-able. Compared to dynamic sites, static sites are much easier to secure, and can be served from the very cheapest of hosting services.</p>
-<p>This technique of pre-rendering static pages websites [has been called <em>baking</em>][baking] a website, as opposed to a short-order server <em>frying</em> up each page upon each request.</p>
+<p>Static websites are those whose server-side resources are pre-computed (or <em>“pre-rendered”</em> or <em>“pre-generated”</em>), so that web servers do not need to perform this activity for each request.</p>
+<p>Static websites are useful because they can be hosted without complex server architecture, which reduces the cost and effort to make them secure, fast, scalable, resilient, and portable.</p>
 <ul>
-<li>have fewer vectors for break-ins,</li>
-<li>easily scale to handle massive amounts of traffic, and</li>
-<li>may be hosted on commodity hardware or the cheapest of web hosting services.</li>
+<li><p><strong>Secure</strong>: Static resources may be hosted read-only, defeating many vectors for attack.</p></li>
+<li><p><strong>Fast</strong>: Static resources are cache-friendly, making them easy to serve from memory both at the server and in the browser, or serve from distributed caches like Content Delivery Networks. In addition, static resources do not incur computation time for database queries or template rendering so even uncached requests are fast.</p></li>
+<li><p><strong>Scalable</strong>: “Fast” means you can serve the same pages to more people, but it also means you can serve the same people using fewer resources. (Simpler software, cheaper hardware, and less power.)</p>
+<p>You can “build out” to geographically distributed content delivery networks, or you can “build in” to lower-cost hosting services, or self-hosting on recycled or low-power computers.</p>
+<p><a href="https://solar.lowtechmagazine.com/about.html">LOW←TECH MAGAZINE’s solar-powered website</a> is a great example of what a static site can enable.</p></li>
+<li><p><strong>Resilient</strong>: When sites are fast, they are less likely to become unavailable due to heavy traffic. When sites do not rely on complex infrastructure, they are less likely to “crash” due to software bugs.</p></li>
+<li><p><strong>Portable</strong>: Static site hosting is the simplest of hosting mechanisms, so there are a wide variety of options and service providers to choose from or move between.</p></li>
 </ul>
-<p>Of course, with no processing occurring on the server end, it’s not possible to host user-interactive features like comments sections, authentication, or e-commerce systems. These days however, many people use third-party tools like <a href="http://disqus.com">Disqus</a> to implement these features anyway, or rely on third-party forums like to provide discussion areas for their content.</p>
-<p>In short, if you’re not using any of the dynamic features of your web hosting service, you might as well make the whole site static. If you <em>are</em> using those features on some areas of your site, you’re better off making the static parts simple static files.</p>
-<p>If <em>Makebakery</em> doesn’t meet your needs, it is only one of [literally hundreds of different static site generators][staticsitegenerators] that people have made. A friend of mine wrote [coleslaw][] and I’ve heard good things about [Pelican][] too.</p>
+<p>However, with no processing occurring on the server end, it’s not possible to host user-interactive features like comments sections, authentication, or e-commerce systems. Instead, many sites rely on browser JavaScript and third-party services to add dynamic features. <a href="https://netlify.com">Netlify</a> calls that approach <a href="https://jamstack.org">Jamstack</a>.</p>
+<p>Most of <a href="https://jamstack.org/why-jamstack">the benefits heralded by Jamstack</a> come from its reliance on static hosting (“<em>pre-generated files</em>”).</p>
+<p>This technique of pre-rendering static pages for websites has also be called <a href="../makebakery-meaning/"><em>baking</em> a website</a>, as opposed to a short-order server <em>frying</em> up each page upon each request.</p>
 
 </div> <!-- /container -->
 
 <!-- Le javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="/makebakery/_/js/jquery-2.1.1.min.js"></script>
-<script src="/makebakery/_/js/bootstrap-3.2.0.min.js"></script>
+<script src="/makebakery/_/js/jquery-3.6.0.min.js"></script>
+<script src="/makebakery/_/js/bootstrap-3.4.1.min.js"></script>
 
 <!--  Get some other variables useful to javascript into the page context. -->
 <script type="text/javascript">
@@ -77,5 +83,6 @@
 
 <!--  this is where we put our custom functions -->
 <script src="/makebakery/_/js/functions.js"></script>
+
 </body>
 </html>

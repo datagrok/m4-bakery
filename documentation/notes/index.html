@@ -4,8 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="author" content="Michael F. Lamb" />
-  <title>Examples</title>
+  <title>(draft) Notes</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -52,26 +51,28 @@
 <div class="container">
 
 <header id="title-block-header">
-<h1 class="title">Examples</h1>
-<p class="author">Michael F. Lamb</p>
-<p class="date">Sun, 20 Oct 2013 11:44:53 -0400</p>
+<h1 class="title">(draft) Notes</h1>
 </header>
-<h2 id="sites-included-with-makebakery">Sites included with makebakery</h2>
+<p>I’m working on cleaning up the documentation for Makebakery. This page serves as a scratch buffer while I move things around. Pardon the mess!</p>
+<h3 id="theory-of-operation">Theory of operation</h3>
+<p>The user creates a Makefile which defines variables appropriate for their configuration, and then <code>include makebakery.mk</code>.</p>
+<p>(This keeps site-specific configuration with the site itself, so the makebakery repo may exist unmodified, treated as a library.)</p>
+<p>Of particular importance is the <code>MODULES</code> variable, which is a whitespace-separated list of <em>makebakery modules</em> that should be enabled.</p>
+<p>A <em>makebakery module</em> is a file or subdirectory containing Make-syntax code stored within the <code>modules</code> directory.</p>
+<p>A source file may be processed multiple times, according to its filename extension. At each step, one layer of filename extension is removed. For example, with the <code>executable</code>, <code>pandoc</code>, and <code>__paths_are_dirs</code> modules enabled, a file named<br />
+<code>foo.html.md.run</code> would be executed and have its output captured to obtain<br />
+<code>foo.html.md</code>, then processed by pandoc to obtain<br />
+<code>foo.html</code>, then renamed to obtain<br />
+<code>foo/index.html</code>.</p>
+<p>Modules are responsible for defining or modifying the variable <code>targets</code>, which names all the files that should be rendered to generate the static site. Modules also define rules for rendering those target files from (perhaps intermediate) source files.</p>
+<p>Modules have an “in” and an “out” section. Modules’ “in” sections are processed in alphanumeric order, then their “out” sections are processed in reverse alphanumeric order. You can think of it like an onion: each module is a “layer” that wraps the next.</p>
+<p>A typical set of MODULES might include:</p>
 <ul>
-<li><p>This site</p></li>
-<li><p>A “minimal” site</p></li>
-<li><p>A site using Pandoc for markdown and m4 for templating and macro expansion</p></li>
+<li>either __source or __multisource to get source files from the filesystem</li>
+<li>possibly __paths_are_dirs or extensionless_html to keep .html filename extensions out of URLs,</li>
+<li>one or more rendering engines for HTML pages, like pandoc or _m4, and</li>
+<li>possibly a processing engine like sass to make authoring css easier.</li>
 </ul>
-<h2 id="sites-built-using-makebakery-or-a-fork">Sites built using makebakery (or a fork)</h2>
-<ul>
-<li><p><a href="https://datagrok.github.io/makebakery/">This website</a>. <a href="https://github.com/datagrok/makebakery/tree/master/examples/makebakery-site">Source</a>, <a href="https://github.com/datagrok/makebakery/blob/master/examples/makebakery-site/Makefile">Makefile</a></p></li>
-<li><p><a href="https://datagrok.org/">Michael F. Lamb’s website</a>.</p></li>
-<li><p><a href="http://brandon.invergo.net/">Brandon Invergo’s website</a>. Made with <a href="http://m4-bloggery.invergo.net/fossil/index">m4-bloggery</a>, a project that began as an early fork of makebakery.</p></li>
-<li><p><a href="https://tilde.town/~pho4cexa/">pho4cexa’s homepage</a> on tilde.town.</p></li>
-</ul>
-<p>If you use makebakery, I’d like to add your website to this list. Please e-mail me or send a pull request!</p>
-<h2 id="other">Other</h2>
-<p>You might be interested in <a href="../documentation/alternatives/">Alternatives to Makebakery</a>.</p>
 
 </div> <!-- /container -->
 
