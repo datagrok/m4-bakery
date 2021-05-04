@@ -56,14 +56,57 @@
 <h1 class="title">TODO</h1>
 </header>
 <ul>
-<li>User docs: Example of how to automatically build a blog from a collection of posts, with RSS and ATOM feeds.</li>
-<li>User docs: Example of how to automatically build a breadcrumbs bar.</li>
-<li>User docs: Example of how to automatically build a <a href="http://www.sitemaps.org">sitemap</a>.</li>
-<li>User docs: Example of how to automatically compile Twitter Bootstrap CSS from its SASS sources.</li>
-<li>User docs: Example of a static AJAX-based application, its static backend, and the <a href="https://developers.google.com/webmasters/ajax-crawling/docs/learn-more">HTML Snapshot needed</a> for non-JavaScript browsers and web-crawlers to index it.</li>
-<li>Developer docs: Example of using <code>phpcli</code> to make a typical PHP-format dynamic site static.</li>
-<li>Developer docs: how to develop a new Makebakery module</li>
-<li>Improve: allow site-local modules</li>
+<li>Documentation
+<ul>
+<li>how to develop a new Makebakery module</li>
+<li>automatic blog from a collection of posts</li>
+<li>automatic RSS and ATOM feeds.</li>
+<li>automatic breadcrumbs bar.</li>
+<li>automatic <a href="http://www.sitemaps.org">sitemap</a>.</li>
+<li>automatic Bootstrap compile from SASS</li>
+<li>Example of a static AJAX-based application, its static backend, and the <a href="https://developers.google.com/webmasters/ajax-crawling/docs/learn-more">HTML Snapshot needed</a> for non-JavaScript browsers and web-crawlers to index it.</li>
+<li>Example of using <code>phpcli</code> to make a typical PHP-format dynamic site static.</li>
+</ul></li>
+<li>Modules
+<ul>
+<li>allow site-local modules</li>
+<li>templating and logic using PHP (processed at compile time)</li>
+<li>templating using <a href="https://palletsprojects.com/p/jinja/">Jinja</a></li>
+<li>photo resizing and thumbnails using <a href="https://imagemagick.org">imagemagick</a></li>
+<li>image optimization using <a href="https://pngquant.org/">pngquant</a>, <a href="https://github.com/scour-project/scour">scour</a>, etc.</li>
+<li>client-side / offline search using <a href="https://lunrjs.com/">lunr</a></li>
+<li>pick source resources out of zip and tarball archives</li>
+<li>deployment via rsync</li>
+<li>deployment including push to remote via gh-pages</li>
+<li>launch a docker container to run any tools that you might not have installed</li>
+<li>make all modules check for the existence of executables they expect and tell you how to install</li>
+<li>PHP</li>
+<li>Improve .url source format for retrieval of upstream resources
+<ul>
+<li>Support files inside of zips and tarballs</li>
+<li>Support files inside of git clones</li>
+<li>Support for checking an MD5SUM of a downloaded resource</li>
+</ul></li>
+<li>Grunt/Bower/Etc.
+<ul>
+<li>Even though I suspect GNU Make can obviate all need for Grunt and Bower, those tools have become part of the workflow for many developers. Show how we can play nice with them, incorporating them into the build pipeline.</li>
+</ul></li>
+<li>M4: Employ frozen state files for speed</li>
+</ul></li>
+<li>Pattern for collation of pages
+<ul>
+<li>Feeds: Atom, RSS</li>
+<li>Google Sitemap</li>
+</ul></li>
+<li>Makefile target for various means of deployment
+<ul>
+<li>trigger on git commit and/or git push</li>
+<li>rsync</li>
+<li>s3 bucket site</li>
+<li>neocities</li>
+<li>✅ gh-pages</li>
+</ul></li>
+<li>Learn about Netlify, how to integrate into their system</li>
 </ul>
 
 </div> <!-- /container -->
