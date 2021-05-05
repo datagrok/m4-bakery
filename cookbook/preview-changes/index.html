@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Michael F. Lamb" />
+  <title>Preview my changes</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="/makebakery/_/css/bootstrap-3.4.1.min.css" />
+  <link rel="stylesheet" href="/makebakery/_/css/bootstrap-theme-3.4.1.min.css" />
+  <link rel="stylesheet" href="/makebakery/_/css/style.css" />
+  <link rel="icon" href="/makebakery/favicon.ico">
+  <link rel="icon" type="image/png" href="/makebakery/image.png">
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+
+    <a href="https://github.com/datagrok/makebakery"><img style="position: absolute; top: 0; right: 0; border: 0;" src="/makebakery/_/img/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+
+    <div class="navbar-header">
+      <button type="button" class="btn btn-default navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="glyphicon glyphicon-folder-open"></span>
+      </button>
+      <a class="navbar-brand" href="/makebakery/">makebakery</a>
+    </div>
+
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav"></ul>
+    </div>
+
+  </div>
+</nav>
+
+<!-- Let's not demo the breadcrumb navigation until it works automatically.
+<div class="container">
+  <ol class="breadcrumb">
+    <li><a href="#"></a></li>
+    <li><a href="#">Library</a></li>
+    <li class="active">Data</li>
+  </ol>
+</div>
+-->
+
+<div class="container">
+
+<header id="title-block-header">
+<h1 class="title">Preview my changes</h1>
+<p class="author">Michael F. Lamb</p>
+<p class="date">Fri, 23 Apr 2021 15:17:30 -0700</p>
+</header>
+<p>Use the <code>serve-python</code> module.</p>
+<pre><code>MODULES := webserver ...</code></pre>
+<p>and then run</p>
+<pre><code>make serve</code></pre>
+<p>This starts a little local webserver to preview your site before deploying it the public internet.</p>
+<p>There’s many other ways to do this. Each of these commands will start a webserver that serves its current directory at http://localhost:8000, if you have the software installed.</p>
+<ul>
+<li>Python 2: <code>python -m SimpleHTTPServer</code> (stop using Python 2.)</li>
+<li>Python 3: <code>python3 -m http.server 8000</code></li>
+<li>Ruby: <code>ruby -run -e httpd . -p 8000</code></li>
+<li>PHP: <code>php -S localhost:8000</code></li>
+<li>busybox: <code>busybox httpd -f -p 8000</code></li>
+</ul>
+<p>TODO: make more modules out of these mechanisms named e.g. <code>serve-busybox</code>, etc.</p>
+
+</div> <!-- /container -->
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/makebakery/_/js/jquery-3.6.0.min.js"></script>
+<script src="/makebakery/_/js/bootstrap-3.4.1.min.js"></script>
+
+<!--  Get some other variables useful to javascript into the page context. -->
+<script type="text/javascript">
+  var site_root = "/makebakery/";
+</script>
+
+<!--  this is where we put our custom functions -->
+<script src="/makebakery/_/js/functions.js"></script>
+
+</body>
+</html>
