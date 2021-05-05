@@ -13,56 +13,56 @@
 <entry>
   <title type="html"><![CDATA[🍞 Makebakery]]></title>
   <link href="https://datagrok.github.io/makebakery//index.html"/>
-  <updated>1620171899000</updated>
+  <updated>1620184560000</updated>
   <id>https://datagrok.github.io/makebakery//index.html</id>
   
 </entry>
 <entry>
   <title type="html"><![CDATA[Examples]]></title>
   <link href="https://datagrok.github.io/makebakery//examples/index.html"/>
-  <updated>1620171899000</updated>
+  <updated>1620184560000</updated>
   <id>https://datagrok.github.io/makebakery//examples/index.html</id>
   
 </entry>
 <entry>
   <title type="html"><![CDATA[makebakery without a Makefile]]></title>
   <link href="https://datagrok.github.io/makebakery//examples/smallest-makefile/index.html"/>
-  <updated>1620171899000</updated>
+  <updated>1620184559000</updated>
   <id>https://datagrok.github.io/makebakery//examples/smallest-makefile/index.html</id>
   
 </entry>
 <entry>
   <title type="html"><![CDATA[Modules]]></title>
   <link href="https://datagrok.github.io/makebakery//modules/index.html"/>
-  <updated>1620171899000</updated>
+  <updated>1620184560000</updated>
   <id>https://datagrok.github.io/makebakery//modules/index.html</id>
   
 </entry>
 <entry>
   <title type="html"><![CDATA[Why should I use paths_are_dirs?]]></title>
   <link href="https://datagrok.github.io/makebakery//modules/which-extensionless/index.html"/>
-  <updated>1620171899000</updated>
+  <updated>1620184560000</updated>
   <id>https://datagrok.github.io/makebakery//modules/which-extensionless/index.html</id>
   
 </entry>
 <entry>
   <title type="html"><![CDATA[Features]]></title>
   <link href="https://datagrok.github.io/makebakery//features/index.html"/>
-  <updated>1620171899000</updated>
+  <updated>1620184559000</updated>
   <id>https://datagrok.github.io/makebakery//features/index.html</id>
   
 </entry>
 <entry>
   <title type="html"><![CDATA[A sub-page containing a sub-page]]></title>
   <link href="https://datagrok.github.io/makebakery//features/subsection/index.html"/>
-  <updated>1620171899000</updated>
+  <updated>1620184560000</updated>
   <id>https://datagrok.github.io/makebakery//features/subsection/index.html</id>
   
 </entry>
 <entry>
   <title type="html"><![CDATA[A sub-page of a sub-page]]></title>
   <link href="https://datagrok.github.io/makebakery//features/subsection/subsubsection/index.html"/>
-  <updated>1620171899000</updated>
+  <updated>1620184560000</updated>
   <id>https://datagrok.github.io/makebakery//features/subsection/subsubsection/index.html</id>
   
 </entry>
@@ -76,147 +76,147 @@
 <entry>
   <title type="html"><![CDATA[A subdirectory page authored in Markdown]]></title>
   <link href="https://datagrok.github.io/makebakery//features/example_page/index.html"/>
-  <updated>1620171899000</updated>
+  <updated>1620184560000</updated>
   <id>https://datagrok.github.io/makebakery//features/example_page/index.html</id>
   
 </entry>
 <entry>
   <title type="html"><![CDATA[Cookbook]]></title>
   <link href="https://datagrok.github.io/makebakery//cookbook/index.html"/>
-  <updated>1620172248000</updated>
+  <updated>1620184559000</updated>
   <id>https://datagrok.github.io/makebakery//cookbook/index.html</id>
   
 </entry>
 <entry>
   <title type="html"><![CDATA[(wip) Make an RSS/ATOM feed]]></title>
   <link href="https://datagrok.github.io/makebakery//cookbook/feed/index.html"/>
-  <updated>1620172283000</updated>
+  <updated>1620184560000</updated>
   <id>https://datagrok.github.io/makebakery//cookbook/feed/index.html</id>
   
 </entry>
 <entry>
   <title type="html"><![CDATA[(wip) Automatically update the preview browser tab whenever the site changes]]></title>
   <link href="https://datagrok.github.io/makebakery//cookbook/automatic-tab-reload/index.html"/>
-  <updated>1620172266000</updated>
+  <updated>1620184560000</updated>
   <id>https://datagrok.github.io/makebakery//cookbook/automatic-tab-reload/index.html</id>
   
 </entry>
 <entry>
   <title type="html"><![CDATA[Automatically update the preview site whenever I modify a file]]></title>
   <link href="https://datagrok.github.io/makebakery//cookbook/watch/index.html"/>
-  <updated>1620171919000</updated>
+  <updated>1620184560000</updated>
   <id>https://datagrok.github.io/makebakery//cookbook/watch/index.html</id>
   
 </entry>
 <entry>
   <title type="html"><![CDATA[(wip) Make a site-map that requires no JavaScript]]></title>
   <link href="https://datagrok.github.io/makebakery//cookbook/sitemap-nojs/index.html"/>
-  <updated>1620172304000</updated>
+  <updated>1620184560000</updated>
   <id>https://datagrok.github.io/makebakery//cookbook/sitemap-nojs/index.html</id>
   
 </entry>
 <entry>
   <title type="html"><![CDATA[(wip) Make a navigation bar that automatically updates itself]]></title>
   <link href="https://datagrok.github.io/makebakery//cookbook/navbar/index.html"/>
-  <updated>1620172292000</updated>
+  <updated>1620184560000</updated>
   <id>https://datagrok.github.io/makebakery//cookbook/navbar/index.html</id>
   
 </entry>
 <entry>
   <title type="html"><![CDATA[Expand some variables in a file]]></title>
   <link href="https://datagrok.github.io/makebakery//cookbook/templating/index.html"/>
-  <updated>1620172106000</updated>
+  <updated>1620184560000</updated>
   <id>https://datagrok.github.io/makebakery//cookbook/templating/index.html</id>
   
 </entry>
 <entry>
   <title type="html"><![CDATA[(wip) Make a site-map]]></title>
   <link href="https://datagrok.github.io/makebakery//cookbook/sitemap/index.html"/>
-  <updated>1620172310000</updated>
+  <updated>1620184560000</updated>
   <id>https://datagrok.github.io/makebakery//cookbook/sitemap/index.html</id>
   
 </entry>
 <entry>
   <title type="html"><![CDATA[Remove the .html extension from my static site’s URLs]]></title>
   <link href="https://datagrok.github.io/makebakery//cookbook/remove-file-extensions/index.html"/>
-  <updated>1620172069000</updated>
+  <updated>1620184560000</updated>
   <id>https://datagrok.github.io/makebakery//cookbook/remove-file-extensions/index.html</id>
   
 </entry>
 <entry>
   <title type="html"><![CDATA[Make make go faster]]></title>
   <link href="https://datagrok.github.io/makebakery//cookbook/make-make-faster/index.html"/>
-  <updated>1620171899000</updated>
+  <updated>1620184560000</updated>
   <id>https://datagrok.github.io/makebakery//cookbook/make-make-faster/index.html</id>
   
 </entry>
 <entry>
   <title type="html"><![CDATA[Preview my changes]]></title>
   <link href="https://datagrok.github.io/makebakery//cookbook/preview-changes/index.html"/>
-  <updated>1620171899000</updated>
+  <updated>1620184560000</updated>
   <id>https://datagrok.github.io/makebakery//cookbook/preview-changes/index.html</id>
   
 </entry>
 <entry>
   <title type="html"><![CDATA[(wip) Make a blog]]></title>
   <link href="https://datagrok.github.io/makebakery//cookbook/blog/index.html"/>
-  <updated>1620172279000</updated>
+  <updated>1620184560000</updated>
   <id>https://datagrok.github.io/makebakery//cookbook/blog/index.html</id>
   
 </entry>
 <entry>
   <title type="html"><![CDATA[About Make]]></title>
   <link href="https://datagrok.github.io/makebakery//documentation/about_make/index.html"/>
-  <updated>1620171899000</updated>
+  <updated>1620184560000</updated>
   <id>https://datagrok.github.io/makebakery//documentation/about_make/index.html</id>
   
 </entry>
 <entry>
   <title type="html"><![CDATA[Documentation]]></title>
   <link href="https://datagrok.github.io/makebakery//documentation/index.html"/>
-  <updated>1620171899000</updated>
+  <updated>1620184560000</updated>
   <id>https://datagrok.github.io/makebakery//documentation/index.html</id>
   
 </entry>
 <entry>
   <title type="html"><![CDATA[(draft) Notes]]></title>
   <link href="https://datagrok.github.io/makebakery//documentation/notes/index.html"/>
-  <updated>1620171899000</updated>
+  <updated>1620184560000</updated>
   <id>https://datagrok.github.io/makebakery//documentation/notes/index.html</id>
   
 </entry>
 <entry>
   <title type="html"><![CDATA[(draft) Make for frontend dev]]></title>
   <link href="https://datagrok.github.io/makebakery//documentation/using_make_for_webdev/index.html"/>
-  <updated>1620171899000</updated>
+  <updated>1620184560000</updated>
   <id>https://datagrok.github.io/makebakery//documentation/using_make_for_webdev/index.html</id>
   
 </entry>
 <entry>
   <title type="html"><![CDATA[About static sites]]></title>
   <link href="https://datagrok.github.io/makebakery//documentation/about_static_sites/index.html"/>
-  <updated>1620171899000</updated>
+  <updated>1620184560000</updated>
   <id>https://datagrok.github.io/makebakery//documentation/about_static_sites/index.html</id>
   
 </entry>
 <entry>
   <title type="html"><![CDATA[TODO]]></title>
   <link href="https://datagrok.github.io/makebakery//documentation/todo/index.html"/>
-  <updated>1620171993000</updated>
+  <updated>1620184560000</updated>
   <id>https://datagrok.github.io/makebakery//documentation/todo/index.html</id>
   
 </entry>
 <entry>
   <title type="html"><![CDATA[What “Makebakery” means]]></title>
   <link href="https://datagrok.github.io/makebakery//documentation/makebakery-meaning/index.html"/>
-  <updated>1620171899000</updated>
+  <updated>1620184560000</updated>
   <id>https://datagrok.github.io/makebakery//documentation/makebakery-meaning/index.html</id>
   
 </entry>
 <entry>
   <title type="html"><![CDATA[Alternatives to Makebakery]]></title>
   <link href="https://datagrok.github.io/makebakery//documentation/alternatives/index.html"/>
-  <updated>1620171899000</updated>
+  <updated>1620184560000</updated>
   <id>https://datagrok.github.io/makebakery//documentation/alternatives/index.html</id>
   
 </entry>
