@@ -56,8 +56,8 @@
 <p class="author">Michael F. Lamb</p>
 <p class="date">Sun, 11 Feb 2018 13:25:15 -0800</p>
 </header>
-<p><em>Makebakery</em> used to be “m4-bakery,” because it grew out of a simpler first iteration that also used <a href="http://www.gnu.org/software/make/">GNU Make</a> but focused on <a href="http://www.gnu.org/software/m4/">GNU m4</a>, another ubiquitous old UNIX tool used for templating and macro expansion.</p>
-<p>The article <a href="http://web.archive.org/web/19980529230944/http://www.linuxgazette.com/issue22/using_m4.html">Using M4 to write HTML</a> (1997)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> was my original inspiration to build it that way.</p>
+<p><em>Makebakery</em> used to be “m4-bakery,” because it grew out of a simpler first iteration that also used <a href="https://www.gnu.org/software/make/">GNU Make</a> but focused on <a href="https://www.gnu.org/software/m4/">GNU m4</a>, another ubiquitous old UNIX tool used for templating and macro expansion.</p>
+<p>The article <a href="https://web.archive.org/web/19980529230944/https://www.linuxgazette.com/issue22/using_m4.html">Using M4 to write HTML</a> (1997)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> was my original inspiration to build it that way.</p>
 <p>However, the learning curve for <code>m4</code> is very steep and the resulting code can be quite ugly, especially for nontrivial tasks.</p>
 <p>Now, all the <code>m4</code>-related logic is <a href="https://github.com/datagrok/makebakery/tree/master/modules/_m4">relegated to a module</a> and not enabled by default, so you can easily avoid it in favor of more modern template mechanisms, or none at all.</p>
 <p>The “bakery” in <em>Makebakery</em> references a 2002 blog post by the late Aaron Swartz<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>:</p>
@@ -68,7 +68,7 @@
 <section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p><a href="http://bhepple.freeshell.org/">Bob Hepple</a>. <em>Linux Gazette</em> Issue 22: <a href="http://web.archive.org/web/19980529230944/http://www.linuxgazette.com/issue22/using_m4.html">Using M4 to write HTML</a> (1997.10).<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1" role="doc-endnote"><p><a href="http://bhepple.freeshell.org/">Bob Hepple</a>. <em>Linux Gazette</em> Issue 22: <a href="https://web.archive.org/web/19980529230944/https://www.linuxgazette.com/issue22/using_m4.html">Using M4 to write HTML</a> (1997.10).<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2" role="doc-endnote"><p><a href="https://en.wikipedia.org/wiki/Aaron_Swartz">Aaron Swartz</a>. <em>Raw Thought</em>: <a href="http://www.aaronsw.com/weblog/000404">Bake, Don’t Fry</a> (2002.07.09).<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3" role="doc-endnote"><p><em><a href="http://webmake.taint.org/">WebMake</a> Documentation</em>: <a href="http://webmake.taint.org/dist/doc/concepts.html">Concepts</a>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4" role="doc-endnote"><p><a href="https://twitter.com/spidaman">Ian Kallen</a>. <em>Industrial Strength Web Publishing</em>: <a href="http://www.arachna.com/edu/talks/iswp/slides/baking_versus_frying.html">Baking Versus Frying</a> (2000.06.20).<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>

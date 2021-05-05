@@ -127,7 +127,7 @@
 <p>More accurately, Makebakery is a <em>collection of rules and recipes</em> for GNU Make that are useful for orchestrating various tools to build various styles of static website.</p>
 <p>Makebakery distinguishes itself from <a href="documentation/alternatives">other Make-based approaches</a> by organizing these rules and recipes into <em>modules</em> which may be toggled to suit your preference.</p>
 <h3 id="motivation">Motivation</h3>
-<p>The basic idea of using <em>Make</em> to orchestrate building static HTML files from source files is fairly well-known. I encountered it in 1998 from <a href="http://web.archive.org/web/19980529230944/http://www.linuxgazette.com/issue22/using_m4.html">Using M4 to write HTML</a> and I’ve been building sites this way ever since.</p>
+<p>The basic idea of using <em>Make</em> to orchestrate building static HTML files from source files is fairly well-known. I encountered it in 1998 from <a href="https://web.archive.org/web/19980529230944/https://www.linuxgazette.com/issue22/using_m4.html">Using M4 to write HTML</a> and I’ve been building sites this way ever since.</p>
 <p>Unfortunately, I found myself re-implementing similar-but-different Makefiles over and over again for each different static site I wanted to build. Makebakery is the result of refactoring my various Makefiles into modular parts, and finding a mechanism to toggle those parts on or off for any site that uses the collection.</p>
 <h3 id="example">Example</h3>
 <p>A short Makefile is enough to get started:</p>
@@ -136,7 +136,7 @@
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="dt">MODULES  </span><span class="ch">=</span><span class="st"> ___ignore __source pandoc</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="dt">IGNORE   </span><span class="ch">=</span><span class="st"> README.html Makefile</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="kw">include</span> /path/to/makebakery.mk</span></code></pre></div>
-<p>When you run <code>make</code>, this will copy source files from the current directory to the destination directory, and use <a href="http://johnmacfarlane.net/pandoc/">Pandoc</a> to convert Markdown to HTML in the process:</p>
+<p>When you run <code>make</code>, this will copy source files from the current directory to the destination directory, and use <a href="https://pandoc.org">Pandoc</a> to convert Markdown to HTML in the process:</p>
 <pre><code>.                        /tmp/build/example
 ├── about.md      -&gt;     ├── about.html
 ├── contact.md           ├── contact.html
@@ -146,7 +146,7 @@
 ├── Makefile
 └── README.md</code></pre>
 <p>This is included as <a href="https://github.com/datagrok/makebakery/tree/master/examples/minimal">the “minimal” example</a> in makebakery’s source code repository.</p>
-<p>You might then add to the compilation pipeline a template engine like <a href="http://jinja.pocoo.org/">Jinja</a>, a CSS compiler like <a href="https://sass-lang.com/">Sass</a>, image processing using <a href="http://www.imagemagick.org">ImageMagick</a>, and any other custom scripts you please.</p>
+<p>You might then add to the compilation pipeline a template engine like <a href="https://jinja.jinja.palletsprojects.com">Jinja</a>, a CSS compiler like <a href="https://sass-lang.com/">Sass</a>, image processing using <a href="https://imagemagick.org">ImageMagick</a>, and any other custom scripts you please.</p>
 <p>To enable a module, add its name to the <code>MODULES</code> variable and define any configuration variables it needs.</p>
 <p>For a slightly more advanced example, examine the <a href="https://github.com/datagrok/makebakery/blob/master/examples/makebakery-site/Makefile">Makefile</a> and associated <a href="https://github.com/datagrok/makebakery/tree/master/examples/makebakery-site">source files used to build this site</a> (that you are reading).</p>
 <hr />
