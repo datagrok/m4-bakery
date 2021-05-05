@@ -2,210 +2,210 @@
 {
     "path": "/index.html",
     "created": null,
-    "modified": 1620189588000,
+    "modified": 1620189831000,
     "short_title": null,
     "title": "🍞 Makebakery"
 },
 {
     "path": "/examples/index.html",
     "created": null,
-    "modified": 1620189588000,
+    "modified": 1620189831000,
     "short_title": null,
     "title": "Examples"
 },
 {
     "path": "/examples/smallest-makefile/index.html",
     "created": null,
-    "modified": 1620189588000,
+    "modified": 1620189830000,
     "short_title": null,
     "title": "makebakery without a Makefile"
 },
 {
     "path": "/modules/index.html",
     "created": null,
-    "modified": 1620189589000,
+    "modified": 1620189831000,
     "short_title": null,
     "title": "Modules"
 },
 {
     "path": "/modules/which-extensionless/index.html",
     "created": null,
-    "modified": 1620189588000,
+    "modified": 1620189831000,
     "short_title": null,
     "title": "Why should I use paths_are_dirs?"
 },
 {
     "path": "/features/index.html",
     "created": null,
-    "modified": 1620189588000,
+    "modified": 1620189831000,
     "short_title": null,
     "title": "Features"
 },
 {
     "path": "/features/subsection/index.html",
     "created": null,
-    "modified": 1620189588000,
+    "modified": 1620189831000,
     "short_title": null,
     "title": "A sub-page containing a sub-page"
 },
 {
     "path": "/features/subsection/subsubsection/index.html",
     "created": null,
-    "modified": 1620189588000,
+    "modified": 1620189831000,
     "short_title": null,
     "title": "A sub-page of a sub-page"
 },
 {
     "path": "/features/example_2/index.html",
     "created": null,
-    "modified": 1620189588000,
+    "modified": 1620189831000,
     "short_title": null,
     "title": "A subdirectory page authored in HTML with no template wrapper"
 },
 {
     "path": "/features/example_page/index.html",
     "created": null,
-    "modified": 1620189588000,
+    "modified": 1620189831000,
     "short_title": null,
     "title": "A subdirectory page authored in Markdown"
 },
 {
     "path": "/cookbook/index.html",
     "created": null,
-    "modified": 1620189588000,
+    "modified": 1620189831000,
     "short_title": null,
     "title": "Cookbook"
 },
 {
     "path": "/cookbook/feed/index.html",
     "created": null,
-    "modified": 1620189588000,
+    "modified": 1620189831000,
     "short_title": null,
     "title": "(wip) Make an RSS/ATOM feed"
 },
 {
     "path": "/cookbook/automatic-tab-reload/index.html",
     "created": null,
-    "modified": 1620189588000,
+    "modified": 1620189831000,
     "short_title": null,
     "title": "(wip) Automatically update the preview browser tab whenever the site changes"
 },
 {
     "path": "/cookbook/watch/index.html",
     "created": null,
-    "modified": 1620189588000,
+    "modified": 1620189831000,
     "short_title": null,
     "title": "Automatically update the preview site whenever I modify a file"
 },
 {
     "path": "/cookbook/sitemap-nojs/index.html",
     "created": null,
-    "modified": 1620189588000,
+    "modified": 1620189831000,
     "short_title": null,
     "title": "(wip) Make a site-map that requires no JavaScript"
 },
 {
     "path": "/cookbook/navbar/index.html",
     "created": null,
-    "modified": 1620189588000,
+    "modified": 1620189831000,
     "short_title": null,
     "title": "(wip) Make a navigation bar that automatically updates itself"
 },
 {
     "path": "/cookbook/templating/index.html",
     "created": null,
-    "modified": 1620189589000,
+    "modified": 1620189831000,
     "short_title": null,
     "title": "Expand some variables in a file"
 },
 {
     "path": "/cookbook/sitemap/index.html",
     "created": null,
-    "modified": 1620189588000,
+    "modified": 1620189831000,
     "short_title": null,
     "title": "(wip) Make a site-map"
 },
 {
     "path": "/cookbook/remove-file-extensions/index.html",
     "created": null,
-    "modified": 1620189588000,
+    "modified": 1620189831000,
     "short_title": null,
     "title": "Remove the .html extension from my static site’s URLs"
 },
 {
     "path": "/cookbook/make-make-faster/index.html",
     "created": null,
-    "modified": 1620189588000,
+    "modified": 1620189831000,
     "short_title": null,
     "title": "Make make go faster"
 },
 {
     "path": "/cookbook/preview-changes/index.html",
     "created": null,
-    "modified": 1620189588000,
+    "modified": 1620189831000,
     "short_title": null,
     "title": "Preview my changes"
 },
 {
     "path": "/cookbook/blog/index.html",
     "created": null,
-    "modified": 1620189588000,
+    "modified": 1620189831000,
     "short_title": null,
     "title": "(wip) Make a blog"
 },
 {
     "path": "/documentation/about_make/index.html",
     "created": null,
-    "modified": 1620189589000,
+    "modified": 1620189831000,
     "short_title": null,
     "title": "About Make"
 },
 {
     "path": "/documentation/index.html",
     "created": null,
-    "modified": 1620189589000,
+    "modified": 1620189831000,
     "short_title": null,
     "title": "Documentation"
 },
 {
     "path": "/documentation/notes/index.html",
     "created": null,
-    "modified": 1620189589000,
+    "modified": 1620189831000,
     "short_title": null,
     "title": "(draft) Notes"
 },
 {
     "path": "/documentation/using_make_for_webdev/index.html",
     "created": null,
-    "modified": 1620189589000,
+    "modified": 1620189831000,
     "short_title": null,
     "title": "(draft) Make for frontend dev"
 },
 {
     "path": "/documentation/about_static_sites/index.html",
     "created": null,
-    "modified": 1620189589000,
+    "modified": 1620189831000,
     "short_title": null,
     "title": "About static sites"
 },
 {
     "path": "/documentation/todo/index.html",
     "created": null,
-    "modified": 1620189589000,
+    "modified": 1620189831000,
     "short_title": null,
     "title": "TODO"
 },
 {
     "path": "/documentation/makebakery-meaning/index.html",
     "created": null,
-    "modified": 1620189589000,
+    "modified": 1620189831000,
     "short_title": null,
     "title": "What “Makebakery” means"
 },
 {
     "path": "/documentation/alternatives/index.html",
     "created": null,
-    "modified": 1620189589000,
+    "modified": 1620189831000,
     "short_title": null,
     "title": "Alternatives to Makebakery"
 },
