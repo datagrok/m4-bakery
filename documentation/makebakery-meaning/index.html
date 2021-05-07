@@ -52,7 +52,7 @@
 <p><em>Makebakery</em> used to be “m4-bakery,” because it grew out of a simpler first iteration that also used <a href="https://www.gnu.org/software/make/">GNU Make</a> but focused on <a href="https://www.gnu.org/software/m4/">GNU m4</a>, another ubiquitous old UNIX tool used for templating and macro expansion.</p>
 <p>The article <a href="https://web.archive.org/web/19980529230944/https://www.linuxgazette.com/issue22/using_m4.html">Using M4 to write HTML</a> (1997)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> was my original inspiration to build it that way.</p>
 <p>However, the learning curve for <code>m4</code> is very steep and the resulting code can be quite ugly, especially for nontrivial tasks.</p>
-<p>Now, all the <code>m4</code>-related logic is <a href="https://github.com/datagrok/makebakery/tree/master/modules/_m4">relegated to a module</a> and not enabled by default, so you can easily avoid it in favor of more modern template mechanisms, or none at all.</p>
+<p>Now, all the <code>m4</code>-related logic is <a href="https://github.com/datagrok/makebakery/tree/main/modules/_m4">relegated to a module</a> and not enabled by default, so you can easily avoid it in favor of more modern template mechanisms, or none at all.</p>
 <p>The “bakery” in <em>Makebakery</em> references a 2002 blog post by the late Aaron Swartz<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>:</p>
 <blockquote>
 <p>Some websites, <a href="http://webmake.taint.org/dist/doc/concepts.html">the webmake documentation explains</a>, are fried up for the user every time. But others are baked once and served up again and again.</p>

@@ -2,14 +2,14 @@
 {
     "path": "/index.html",
     "created": null,
-    "modified": 1620359804000,
+    "modified": 1620362828000,
     "short_title": null,
     "title": "🍞 Makebakery"
 },
 {
     "path": "/examples/index.html",
     "created": null,
-    "modified": 1620359804000,
+    "modified": 1620362788000,
     "short_title": null,
     "title": "Examples"
 },
@@ -37,7 +37,7 @@
 {
     "path": "/features/index.html",
     "created": null,
-    "modified": 1620359804000,
+    "modified": 1620362801000,
     "short_title": null,
     "title": "Features"
 },
@@ -65,7 +65,7 @@
 {
     "path": "/features/example_page/index.html",
     "created": null,
-    "modified": 1620359804000,
+    "modified": 1620362791000,
     "short_title": null,
     "title": "A subdirectory page authored in Markdown"
 },
@@ -198,7 +198,7 @@
 {
     "path": "/documentation/makebakery-meaning/index.html",
     "created": null,
-    "modified": 1620359805000,
+    "modified": 1620362779000,
     "short_title": null,
     "title": "What “Makebakery” means"
 },
