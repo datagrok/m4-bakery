@@ -76,28 +76,21 @@
     code span.vs { color: #4070a0; } /* VerbatimString */
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="/makebakery/_/css/bootstrap-3.4.1.min.css" />
-  <link rel="stylesheet" href="/makebakery/_/css/bootstrap-theme-3.4.1.min.css" />
+  <link rel="stylesheet" href="/makebakery/_/css/bootstrap-5.0.0.min.css" />
   <link rel="stylesheet" href="/makebakery/_/css/style.css" />
   <link rel="icon" href="/makebakery/favicon.ico">
   <link rel="icon" type="image/png" href="/makebakery/image.png">
 </head>
 <body>
-
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container">
-
-    <div class="navbar-header">
-      <button type="button" class="btn btn-default navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="glyphicon glyphicon-folder-open"></span>
-      </button>
-      <a class="navbar-brand" href="/makebakery/">makebakery</a>
+<nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/makebakery/">🍞 makebakery</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-items" aria-controls="navbar-items" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar-items">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
     </div>
-
-    <div class="navbar-collapse collapse">
-      <ul class="nav navbar-nav"></ul>
-    </div>
-
   </div>
 </nav>
 
@@ -120,7 +113,7 @@
 </header>
 <p><strong>Makebakery</strong> is a static website generator implemented using <a href="https://www.gnu.org/software/make/">GNU Make</a>.</p>
 <figure>
-<img src="bakery.jpg" class="pull-right" alt="" /><figcaption>Photo: <a href="https://www.flickr.com/photos/barthelomaus/104318646/">Boris Bartels, “Bakery” (2006)</a> (<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA 2.0</a>). Resized.</figcaption>
+<img src="bakery.jpg" class="rounded" alt="" /><figcaption>Photo: <a href="https://www.flickr.com/photos/barthelomaus/104318646/">Boris Bartels, “Bakery” (2006)</a> (<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA 2.0</a>).</figcaption>
 </figure>
 <p><strong><em>Static</em> websites</strong> are those which require no special logic on the server-side to work, as opposed to <strong><em>dynamic</em> websites</strong> which trigger some server-side processing for most page requests. <a href="documentation/about_static_sites/">More about static sites…</a></p>
 <p><strong><em>Make</em></strong> is a venerable old UNIX build tool intended for the compilation of software source code into executable code, but Makebakery puts it to use compiling websites. <strong>GNU Make</strong> is one popular variant of <em>Make</em> with several enhancements, included with most Linux distributions. <a href="documentation/about_make/">More about <em>Make</em>…</a></p>
@@ -158,7 +151,7 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="/makebakery/_/js/jquery-3.6.0.min.js"></script>
-<script src="/makebakery/_/js/bootstrap-3.4.1.min.js"></script>
+<script src="/makebakery/_/js/bootstrap-5.0.0.bundle.min.js"></script>
 
 <!--  Get some other variables useful to javascript into the page context. -->
 <script type="text/javascript">

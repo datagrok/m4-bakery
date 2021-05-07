@@ -1,38 +1,15 @@
 body {
-    padding-top: 50px; /* required with .navbar-fixed-top */
+    padding-top: 100px; /* required with .navbar-fixed-top */
 }
 p.author, p.date {
     display: none;
 }
 
-.breadcrumb {
-    margin-bottom: 0px;
-    font-size: 12px;
-    padding: 4px 15px;
-}
-
-figure > img.pull-right {
-    float: unset !important;
-}
-/*
-figure:has(img.pull-right) {
-    float: right;
-}
-*/
-figure {
-    margin: 1em 0em 1em 1em;
-    float: right;
-}
-figcaption {
-    font-size: smaller;
-}
 blockquote {
-    font-size: inherit;
+    padding-left: 2rem;
 }
-a {
-    text-decoration: underline;
-}
-nav a {
-    text-decoration: none;
 
+/* override bootstrap to make figcaptions a bit smaller. */
+.figure-caption {
+    font-size: .7em;
 }
